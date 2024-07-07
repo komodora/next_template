@@ -1,3 +1,9 @@
+import { Title } from '@mantine/core';
+
 export default function Page() {
-  return <h1>Hello, Next.js!</h1>
+  return (
+    <>
+      <Title order={1}>Hello, Next.js!</Title>
+    </>
+  );
 }

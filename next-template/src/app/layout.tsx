@@ -1,6 +1,10 @@
 import '@mantine/core/styles.css';
 
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from '@mantine/core';
 
 export default function RootLayout({
   children,
@@ -8,7 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    // Important: add mantineHtmlProps to <html> to prevent color scheme hydration issues
+    // https://help.mantine.dev/q/color-scheme-hydration-warning
+    <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
       </head>
